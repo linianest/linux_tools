@@ -1,0 +1,9 @@
+#!/bin/bash
+
+args=$1
+
+for i in mini1 mini2 mini3
+do
+        echo --------$i  $args--------
+        ssh $i "$*"
+done

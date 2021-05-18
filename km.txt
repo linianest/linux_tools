@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $1 in 
+"start"){
+        echo "------------Æô¶¯ KafkaManager---------------"
+        nohup /opt/module/kafka-manager-2.0.0.0/bin/kafka-manager -Dhttp.port=7456 > start.log 2>&1 &
+};;
+"stop"){
+        echo "------------Í£Ö¹ KafkaManager---------------"
+        ps -ef | grep ProdServerStart | grep -v grep | awk '{print $2}' | xargs kill
+};;
+esac

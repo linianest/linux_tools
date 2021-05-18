@@ -1,0 +1,32 @@
+#/bin/bash
+
+case $1 in
+"start"){
+        for i in mini1 mini2 mini3
+        do 
+                ssh $i "/opt/module/zookeeper-3.4.7/bin/zkServer.sh start" 
+        done
+
+};;
+"stop"){
+        for i in mini1 mini2 mini3
+        do 
+                ssh $i "/opt/module/zookeeper-3.4.7/bin/zkServer.sh stop" 
+        done
+
+};;
+"status"){
+        for i in mini1 mini2 mini3
+        do 
+                ssh $i "/opt/module/zookeeper-3.4.7/bin/zkServer.sh status" 
+        done
+
+};;
+"restart"){
+        for i in mini1 mini2 mini3
+        do 
+                ssh $i "/opt/module/zookeeper-3.4.7/bin/zkServer.sh restart" 
+        done
+
+};;
+esac
